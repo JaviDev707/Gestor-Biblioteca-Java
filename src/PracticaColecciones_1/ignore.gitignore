@@ -1,0 +1,6 @@
+# Ignorar carpetas y archivos de configuración
+.idea/
+*.iml
+*.class
+bin/
+out/
