@@ -1,4 +1,4 @@
-package PracticaColecciones_1;
+package com.mibiblioteca;
 
 public class Libro {
 

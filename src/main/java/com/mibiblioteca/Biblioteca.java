@@ -1,4 +1,4 @@
-package PracticaColecciones_1;
+package com.mibiblioteca;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

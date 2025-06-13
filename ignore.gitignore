@@ -1,6 +1,9 @@
 # Ignorar carpetas y archivos de configuración
-.idea/
-*.iml
+target/
 *.class
-bin/
-out/
+*.log
+*.jar
+*.war
+*.iml
+.idea/
+.DS_Store

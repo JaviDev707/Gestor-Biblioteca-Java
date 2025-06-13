@@ -1,4 +1,4 @@
-package PracticaColecciones_1;
+package com.mibiblioteca;
 /**
  * Crear un sistema para gestionar los libros de una biblioteca. 
  * El sistema permitirá registrar libros, usuarios, préstamos y devoluciones. 
@@ -26,6 +26,8 @@ public class App {
         biblioteca.registrarUsuario(usuario1);
         biblioteca.registrarUsuario(usuario2);
         biblioteca.registrarUsuario(usuario3);
+
+        biblioteca.mostrarLibros();
 
     }
 }
