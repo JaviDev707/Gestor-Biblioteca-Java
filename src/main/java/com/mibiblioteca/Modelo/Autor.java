@@ -1,5 +1,7 @@
-package com.mibiblioteca;
-
+package com.mibiblioteca.Modelo;
+/*
+ * Por ahora autor es solo un String de la clase libro.
+ */
 public class Autor {
     
     private String nombre, apellido1, apellido2;

@@ -1,8 +1,8 @@
-package com.mibiblioteca;
+package com.mibiblioteca.Modelo;
 
 public class Libro {
 
-    private String isbn;
+    private int isbn;
     private String titulo;
     private String autor;
     private int año;
@@ -10,7 +10,7 @@ public class Libro {
 
     public Libro() {}
 
-    public Libro(String isbn, String titulo, String autor, int año, String genero) {
+    public Libro(int isbn, String titulo, int año, String autor, String genero) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
@@ -18,11 +18,11 @@ public class Libro {
         this.genero = genero;
     }
 
-    public String getIsbn() {
+    public int getIsbn() {
         return this.isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(int isbn) {
         this.isbn = isbn;
     }
 

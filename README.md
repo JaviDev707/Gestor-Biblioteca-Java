@@ -15,9 +15,26 @@ Este proyecto fue pensado para prácticar colecciones en Java y para ampliarlo c
 
 ## Futuras mejoras
 
-- Conexión a base de datos 
-- Persistencia de libros y usuarios
-- Interfaz gráfica
-- Validaciones más robustas
+- Gestión de múltiples ejemplares por libro
+- Crear un historial de prestamos (trigger)
+- Persistencia completa de libros y usuarios
+- Interfaz gráfica con Swing o JavaFX
+- Validaciones más robustas de entradas
+
+## Historial de actualizaciones
+
+- V1
+
+    Gestor de biblioteca en Java usando HashMap y ArrayList.
+
+- V2
+
+    Migración del proyecto a Maven.
+
+- V3
+
+    Reestructuración del proyecto utilizando una arquitectura DAO.
+    Integración con base de datos MySQL usando JDBC.
+
 
 ## Desarrollado por Javier Gismero con la finalidad de mejorar mi manejo de Java y SQL.

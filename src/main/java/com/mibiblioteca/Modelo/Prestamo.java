@@ -1,23 +1,33 @@
-package com.mibiblioteca;
+package com.mibiblioteca.Modelo;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Prestamo {
     
+    private int id;
     private Usuario usuario;
     private Libro libro;
-    private LocalDate fecha_prestamo;
-    private LocalDate fecha_devolucion;
+    private Date fecha_prestamo;
+    private Date fecha_devolucion;
     @SuppressWarnings("unused")
     private boolean libroDevuelto;
 
     public Prestamo() {}
 
-    public Prestamo(Usuario usuario, Libro libro, LocalDate fecha_prestamo, LocalDate fecha_devolucion) {
+    public Prestamo(int id, Usuario usuario, Libro libro, Date fecha_prestamo, Date fecha_devolucion) {
+        this.id = id;
         this.usuario = usuario;
         this.libro = libro;
         this.fecha_prestamo = fecha_prestamo;
         this.fecha_devolucion = fecha_devolucion;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Usuario getUsuario() {
@@ -36,19 +46,19 @@ public class Prestamo {
         this.libro = libro;
     }
 
-    public LocalDate getFecha_prestamo() {
+    public Date getFecha_prestamo() {
         return this.fecha_prestamo;
     }
 
-    public void setFecha_prestamo(LocalDate fecha_prestamo) {
+    public void setFecha_prestamo(Date fecha_prestamo) {
         this.fecha_prestamo = fecha_prestamo;
     }
 
-    public LocalDate getFecha_devolucion() {
+    public Date getFecha_devolucion() {
         return this.fecha_devolucion;
     }
 
-    public void setFecha_devolucion(LocalDate fecha_devolucion) {
+    public void setFecha_devolucion(Date fecha_devolucion) {
         this.fecha_devolucion = fecha_devolucion;
     }
 
@@ -61,7 +71,7 @@ public class Prestamo {
     }
 
     public void devolverLibro(){
-        this.fecha_devolucion = LocalDate.now();
+        //this.fecha_devolucion = LocalDate.now();
     }
     
 }

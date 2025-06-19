@@ -1,16 +1,18 @@
-package com.mibiblioteca;
+package com.mibiblioteca.Modelo;
 
 public class Usuario {
     
     private int id;
     private String nombre;
+    private String apellido;
     private String email;
 
     public Usuario() {}
 
-    public Usuario(int id, String nombre, String email) {
+    public Usuario(int id, String nombre, String apellido, String email) {
         this.id = id;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.email = email;
     }
 
@@ -20,6 +22,14 @@ public class Usuario {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getApellido() {
+        return this.apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getNombre() {
