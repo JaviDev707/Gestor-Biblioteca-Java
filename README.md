@@ -5,7 +5,7 @@ Este proyecto fue pensado para prácticar colecciones en Java y para ampliarlo c
 
 ## Funcionalidades
 
-- Conexión con base de datos MySQL
+- Conexión con base de datos MySQL usando JDBC
 - Registrar y borrar usuarios
 - Buscar libros por ISBN, autor y género
 - Buscar usuarios por email
