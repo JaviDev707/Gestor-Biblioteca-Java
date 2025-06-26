@@ -9,7 +9,8 @@ import com.mibiblioteca.Modelo.Libro;
 public class LibroDAO {
     
     private Connection conexion;
-    private final String BASE_QUERY = "SELECT libros.isbn, libros.nombre, libros.año, autores.nombre, autores.apellido1, autores.apellido2, generos.genero FROM libros\n" + //
+    private final String BASE_QUERY = "SELECT libros.isbn, libros.nombre, libros.año, libros.stock_actual, libros.stock_total, \n" + //  
+                        "autores.nombre, autores.apellido1, autores.apellido2, generos.genero FROM libros\n" + //
                         "JOIN autores\n" + //
                         "ON libros.id_autor = autores.id_autor\n" + //
                         "JOIN generos\n" + //
@@ -45,14 +46,9 @@ public class LibroDAO {
 
         ResultSet rs = stmt.executeQuery();
         if (rs.next()) {
-            return new Libro(rs.getInt("libros.isbn"),
-            rs.getString("libros.nombre"),
-            rs.getInt("libros.año"), 
-            rs.getString("autores.nombre") + " " + rs.getString("autores.apellido1") + " " + rs.getString("autores.apellido2"),
-            rs.getString("generos.genero")
-        );
+            return crearLibro(rs);
         } else {
-            System.out.println("No se ha encontrado un libro con ese ISBN");
+            System.out.println("No se ha encontrado un libro con ISBN: " + isbn);
             return null;
         }
         
@@ -91,6 +87,9 @@ public class LibroDAO {
         }
         return libros;
     }
+
+
+    
     /**
      * Metodo privado que crea un objeto Libro
      */
@@ -99,7 +98,9 @@ public class LibroDAO {
                 rs.getString("libros.nombre"),
                 rs.getInt("libros.año"), 
                 rs.getString("autores.nombre") + " " + rs.getString("autores.apellido1") + " " + rs.getString("autores.apellido2"),
-                rs.getString("generos.genero")
+                rs.getString("generos.genero"),
+                rs.getInt("libros.stock_actual"),
+                rs.getInt("libros.stock_total")
             );
     }
 }

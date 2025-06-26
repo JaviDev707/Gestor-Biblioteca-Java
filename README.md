@@ -5,19 +5,18 @@ Este proyecto fue pensado para prácticar colecciones en Java y para ampliarlo c
 
 ## Funcionalidades
 
-- Registrar libros y usuarios
-- Buscar libros por ISBN
-- Buscar usuarios por ID
+- Conexión con base de datos MySQL
+- Registrar y borrar usuarios
+- Buscar libros por ISBN, autor y género
+- Buscar usuarios por email
 - Solicitar préstamo de libros
 - Devolver libros
 - Mostrar préstamos activos de un usuario
-- Control de disponibilidad de libros
+- Control de disponibilidad y el stock de libros
+- Registro de prestamos en una tabla historial
 
 ## Futuras mejoras
 
-- Gestión de múltiples ejemplares por libro
-- Crear un historial de prestamos (trigger)
-- Persistencia completa de libros y usuarios
 - Interfaz gráfica con Swing o JavaFX
 - Validaciones más robustas de entradas
 
@@ -36,5 +35,11 @@ Este proyecto fue pensado para prácticar colecciones en Java y para ampliarlo c
     Reestructuración del proyecto utilizando una arquitectura DAO.
     Integración con base de datos MySQL usando JDBC.
 
+- V4
+
+    Gestión de múltiples ejemplares por libro.
+    Control del stock de los libros.
+    Registro de prestamos en un historial (Mediante trigger en la base de datos).
+    Depurado y optimizado.
 
 ## Desarrollado por Javier Gismero con la finalidad de mejorar mi manejo de Java y SQL.

@@ -1,9 +1,34 @@
-# Ignorar carpetas y archivos de configuración
-target/
+##############################
+## Java
+##############################
+.mtj.tmp/
 *.class
-*.log
 *.jar
 *.war
-*.iml
-.idea/
-.DS_Store
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+##############################
+## Maven
+##############################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+pom.xml.bak
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+##############################
+## Visual Studio Code
+##############################
+.vscode/
+.code-workspace
+##############################
+## Miscellaneous
+##############################
+*.log

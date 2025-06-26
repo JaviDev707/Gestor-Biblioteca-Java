@@ -25,13 +25,7 @@ public class UsuarioDAO {
         ResultSet rs = stmt.executeQuery(sql);
 
         while (rs.next()) {
-            Usuario u = new Usuario(
-                rs.getInt("id_usuario"),
-                rs.getString("nombre"),
-                rs.getString("apellido"),
-                rs.getString("email")
-            );
-            usuarios.add(u);
+            usuarios.add(crearUsuario(rs));
         }
         return usuarios;
     }
@@ -46,12 +40,7 @@ public class UsuarioDAO {
 
         ResultSet rs = stmt.executeQuery();
         if (rs.next()) {
-            return new Usuario(
-                rs.getInt("id_usuario"),
-                rs.getString("nombre"),
-                rs.getString("apellido"),
-                rs.getString("email")
-            );
+            return crearUsuario(rs);
         } else {
             System.out.println("No se ha encontrado un usuario asociado a ese email");
             return null;
@@ -69,14 +58,9 @@ public class UsuarioDAO {
 
         ResultSet rs = stmt.executeQuery();
         if (rs.next()) {
-            return new Usuario(
-                rs.getInt("id_usuario"),
-                rs.getString("nombre"),
-                rs.getString("apellido"),
-                rs.getString("email")
-            );
+            return crearUsuario(rs);
         } else {
-            System.out.println("El usuario no exite");
+            System.out.println("El usuario con id " + id + " no exite");
             return null;
         }
     }
@@ -99,10 +83,29 @@ public class UsuarioDAO {
     public boolean deleteUsuario(int id) throws SQLException{
 
         String sql = "DELETE FROM usuarios WHERE id_usuario = ?;";
+        try {
+            PreparedStatement stmt = conexion.prepareStatement(sql);
+            stmt.setInt(1, id);
+            //Devuelve true si se elimina al menos una fila
+            return stmt.executeUpdate() > 0;   
+        } catch (java.sql.SQLIntegrityConstraintViolationException e) {
+            System.out.println("No puede borrar un usuario con prestamos activos!");
+            return false;
+        }
+        
+    }
 
-        PreparedStatement stmt = conexion.prepareStatement(sql);
-        stmt.setInt(1, id);
-        //Devuelve true si se elimina al menos una fila
-        return stmt.executeUpdate() > 0;   
+
+    
+    /**
+     * Metodo privado que crea un objeto Usuario
+     */
+    private Usuario crearUsuario(ResultSet rs) throws SQLException{
+        return new Usuario(
+                rs.getInt("id_usuario"),
+                rs.getString("nombre"),
+                rs.getString("apellido"),
+                rs.getString("email")
+            );
     }
 }
